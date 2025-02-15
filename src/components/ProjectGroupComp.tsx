@@ -20,13 +20,12 @@ const ProjectGroupComp = () => {
   }, []);
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4  justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  justify-items-center items-center">
         {projects.map((project: Project, index: number) => {
           return (
             // eslint-disable-next-line react/jsx-key
-            <div>
-              <CardComp key={index} project={project} />
-            </div>
+
+            <CardComp key={index} project={project} />
           );
         })}
       </div>

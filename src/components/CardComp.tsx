@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +11,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useState } from "react";
 type Project = {
   id: string;
   title?: string;
@@ -23,9 +24,21 @@ type ProjectItemProps = {
   project: Project;
 };
 const CardComp: React.FC<ProjectItemProps> = ({ project }) => {
-  console.log(project);
+  const [showDescription, setShowDescription] = useState(false);
+  const HideDesc = (desc: string | undefined) => {
+    if (!desc) desc = "";
+    if (!showDescription) {
+      desc = desc.substring(0, 50) + "...";
+    }
+    return desc;
+  };
+
+  const toggleShowFullDescription = () => {
+    setShowDescription(!showDescription);
+  };
+
   return (
-    <Card className="w-[350px] transition-all hover:shadow-lg">
+    <Card className=" transition-all hover:shadow-lg">
       <CardHeader>
         <CardTitle>{project?.title}</CardTitle>
         <CardDescription>{project?.tagLine}</CardDescription>
@@ -41,7 +54,13 @@ const CardComp: React.FC<ProjectItemProps> = ({ project }) => {
           />
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
-          {project?.description}
+          {HideDesc(project.description)}
+          <button
+            onClick={toggleShowFullDescription}
+            className="text-gray-800 hover:text-gray-900 "
+          >
+            {showDescription ? "less" : "more"}
+          </button>
         </p>
       </CardContent>
       <CardFooter>
