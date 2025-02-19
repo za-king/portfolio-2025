@@ -95,9 +95,9 @@ const CardComp: React.FC<ProjectItemProps> = ({ project, index }) => {
           </p>
         </motion.span>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="items-end justify-end">
         <Link href={`/${project?.id}`}>
-          <Button className="mr-auto group" variant="ghost">
+          <Button className=" group" variant="ghost">
             See Detail
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
