@@ -51,7 +51,7 @@ export function LoadingGridComp() {
                 </div>
 
                 {/* Button skeleton */}
-                <div className="pt-2">
+                <div className="pt-2 flex justify-end">
                   <Skeleton className="h-8 w-24" />
                 </div>
               </div>
