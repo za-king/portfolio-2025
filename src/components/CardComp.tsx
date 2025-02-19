@@ -88,9 +88,9 @@ const CardComp: React.FC<ProjectItemProps> = ({ project, index }) => {
             {HideDesc(project.description)}
             <button
               onClick={toggleShowFullDescription}
-              className="text-gray-800 hover:text-gray-900 "
+              className="text-gray-800 hover:text-gray-900 hover:font-semibold "
             >
-              {showDescription ? "less" : "more"}
+              {showDescription ? "...less" : "more"}
             </button>
           </p>
         </motion.span>
