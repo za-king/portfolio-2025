@@ -24,7 +24,7 @@ export function LoadingGridComp() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12">
+    <div className="mx-auto max-w-7xl px-4 ">
       <motion.div
         variants={container}
         initial="hidden"
